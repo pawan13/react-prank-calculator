@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+:root{
+  --primaryColor: #617A55;
+  --secondaryColor: #a4d0a4;
+  --tertiaryColor: #fff8d6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+margin: 0;
+font-size: 1.1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*{
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
+.wrapper{
   min-height: 100vh;
+  background: linear-gradient(var(--tertiaryColor, var(--primaryColor)));
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator{
+  background: gray;
+  width: 400px;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+
+  display:grid;
+  gap: 1rem;
+
+  grid-template-areas: 
+  "display display display display"
+  "ac c perc divide"
+  "b7 b8 b9 x"
+  "b4 b5 b6 minus"
+  "b1 b2 b3 plus"
+  "b0 b0 dot equals"
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator div{
+  min-height: 50px;
+  background: var(--secondaryColor);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.calculator div{
+  cursor: pointer;
+  transition: all 0.1sec;
+}
+
+.display{
+  grid-area: display;
+}
+
+.btn-AC
+{grid-area:ac}
+.btn-C
+{grid-area:c}
+.btn-perc
+{grid-area:perc}
+.btn-divide
+{grid-area:divide}
+.btn-7
+{grid-area:b7}
+.btn-8
+{grid-area:b8}
+.btn-9
+{grid-area:b9}
+.btn-x
+{grid-area:x}
+.btn-4
+{grid-area:b4}
+.btn-5
+{grid-area:b5}
+.btn-6
+{grid-area:b6}
+.btn-minus
+{grid-area:minus}
+.btn-1
+{grid-area:b1}
+.btn-2
+{grid-area:b2}
+.btn-3
+{grid-area:b3}
+.btn-add
+{grid-area:plus}
+.btn-0
+{grid-area:b0}
+.btn-dot
+{grid-area:dot}
+.btn-equals{grid-area:equals
+  }
+
+  .calculator .prank{
+    background: red;
+    color: white;
+      animation: shake 5s 2 alternate
+  }
+  @keyframes shake {
+     0%{
+      transform: translateX(10px);
+     } 
+     50%{
+      transform: translateX(-10px);
+     }  80%{
+      transform: translateX(10px);
+     } 
+     0%{
+      transform: translateX(10px);
+     } 
+  }
